@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.LoginActivity"
+    android:background="@drawable/loginbg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="15dp"
+                android:text="@string/app_name"
+                android:textColor="#494949"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="50dp"
+            android:background="@drawable/transparent_box"
+            tools:ignore="WebViewLayout">
+            <EditText
+                android:id="@+id/et_studentId"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/transparent_box"
+                android:textColor="@color/colorLoginText"
+                android:textColorHint="@color/colorLoginText"
+                android:hint="学号"
+                android:padding="10dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/et_studentPassword"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/transparent_box"
+                android:textColor="@color/colorLoginText"
+                android:textColorHint="@color/colorLoginText"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textAlignment="center" />
+            <LinearLayout
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/transparent_box"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="25dp">
+                <EditText
+                    android:id="@+id/et_code"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:hint="输入验证码"
+                    android:background="@null"
+                    android:textColor="@color/colorLoginText"
+                    android:textColorHint="@color/colorLoginText"/>
+                <WebView
+                    android:id="@+id/wv_code"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_studentLogin"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/login_button"
+                android:text="学生登录"
+                android:textSize="18sp"
+                android:textColor="#494949" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

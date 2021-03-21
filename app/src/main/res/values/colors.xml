@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#80bdab</color>
+    <color name="colorPrimaryDark">#333333</color>
+    <color name="colorAccent">#009688</color>
+    <color name="colorBG">#EAF1E2</color>
+    <color name="colorShadow">#e9e9e9</color>
+    <color name="colorText">#fafafa</color>
+    <color name="userButton">#ffffff</color>
+    <color name="colorLoginText">#fffdf6</color>
+    <color name="colorBar">#D1D1C5</color>
+    <color name="colorNumber">#00423B</color>
+    <color name="colorBookDate">#ff9595</color>
+    <color name="colorItem">#002520</color>
+</resources>

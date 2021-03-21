@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/work_view_border">
+        <TextView
+            android:id="@+id/tv_workType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/colorItem"
+            android:background="@drawable/work_text_view_border"/>
+
+        <TextView
+            android:id="@+id/tv_workFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/colorItem"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tv_workTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:padding="10dp"
+            android:gravity="right"/>
+    </LinearLayout>
+
+</LinearLayout>

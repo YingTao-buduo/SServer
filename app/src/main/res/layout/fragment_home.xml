@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:layout_gravity="center">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btn_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/schedule"
+            android:gravity="bottom"
+            android:text="课程表"
+
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btn_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/leave"
+            android:gravity="bottom"
+            android:text="我的请假"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btn_attendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/attendance"
+            android:gravity="bottom"
+            android:text="我的考勤"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/work"
+            android:gravity="bottom"
+            android:text="待办事项"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/score"
+            android:gravity="bottom"
+            android:text="成绩查询"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/exam"
+            android:gravity="bottom"
+            android:text="考试信息"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_borrowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bookreturn"
+            android:gravity="bottom"
+            android:text="待还书籍"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/borrowhistory"
+            android:gravity="bottom"
+            android:text="借阅历史"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textAlignment="center" />
+    </GridLayout>
+
+</FrameLayout>

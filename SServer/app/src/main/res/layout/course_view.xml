@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_courseCover"
+            android:layout_width="140dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/default_course_img"/>
+
+        <RelativeLayout
+            android:id="@+id/courseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp">
+
+
+            <TextView
+                android:id="@+id/tv_courseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程名称"
+                android:textColor="#333333"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/tv_courseTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主讲教师"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tv_courseName"
+                android:textSize="15sp"
+                android:textColor="#494949"/>
+
+            <TextView
+                android:id="@+id/tv_courseNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程编号"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/tv_courseTeacher"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/tv_courseNumber"
+                android:layout_alignBottom="@id/courseText"
+                android:layout_marginTop="5dp"
+                tools:ignore="NotSibling">
+                <TextView
+                    android:id="@+id/tv_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="通知"
+                    android:textColor="#FFEB3B"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_homework"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作业"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="测试"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_questionnaire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="问卷"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

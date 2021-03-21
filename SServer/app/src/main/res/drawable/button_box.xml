@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 第一层阴影：左偏移2dp，上偏移4dp -->
+    <item
+        android:left="1dp"
+        android:top="2dp">
+        <shape>
+            <solid android:color="#494949" />
+            <!--圆角-->
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- 第二层前景：：底偏移4dp，右偏移2dp -->
+    <item
+        android:bottom="2dp"
+        android:right="1dp">
+        <shape>
+            <solid android:color="#fafafa" />
+            <!--圆角-->
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

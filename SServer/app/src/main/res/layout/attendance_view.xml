@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal"
+        android:background="@drawable/attendance_view_border">
+
+        <TextView
+            android:id="@+id/tv_attendanceTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="时间"
+            android:gravity="center"
+            android:layout_weight="4" />
+
+
+        <TextView
+            android:id="@+id/tv_attendanceCourse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="课程信息"
+            android:gravity="center"
+            android:layout_weight="3"/>
+
+        <TextView
+            android:id="@+id/tv_attendanceType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="类别"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="5" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/work_view_border">
+
+        <ImageView
+            android:id="@+id/iv_courseCover"
+            android:layout_width="140dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/default_course_img"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp">
+
+
+            <TextView
+                android:id="@+id/tv_courseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorItem"
+                android:text="课程名称"
+                android:textSize="23sp"/>
+
+            <TextView
+                android:id="@+id/tv_courseTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主讲教师"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tv_courseNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="课程编号"
+                android:layout_marginTop="5dp"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/tv_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="通知"
+                    android:textColor="#00BB00"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_homework"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="作业"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="测试"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:id="@+id/tv_questionnaire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="问卷"
+                    android:textColor="#FF2222"
+                    android:textSize="15sp"
+                    android:alpha="0"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
