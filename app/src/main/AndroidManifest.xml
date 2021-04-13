@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home.LeaveCreateActivity"></activity>
+        <activity android:name=".course.HomeworkActivity"></activity>
+        <activity android:name=".home.LeaveCreateActivity" />
         <activity
             android:name=".user.LoginActivity"
             android:label="登录" />

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import com.yt.s_server.course.Course;
 import com.yt.s_server.course.CourseAdapter;
 import com.yt.s_server.course.EolCourseMenuActivity;
+import com.yt.s_server.course.HomeworkActivity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -99,11 +100,7 @@ public class MyCourse extends Fragment {
                         String noticeHtml = inputStreamTOString(connection.getInputStream());
                         result += noticeHtml;
 
-                        URL logoutUrl = new URL("http://eol.bnuz.edu.cn/meol/homepage/V8/include/logout.jsp");// 退出网络教学平台
-                        URLConnection connection1 = logoutUrl.openConnection();
-                        connection1.setRequestProperty("Cookie", cookie);
-                        connection1.setDoInput(true);
-                        String logoutHtml = inputStreamTOString(connection1.getInputStream());
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -198,7 +195,7 @@ public class MyCourse extends Fragment {
                 courseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                        Intent intent = new Intent(getContext(), EolCourseMenuActivity.class);
+                        Intent intent = new Intent(getContext(), HomeworkActivity.class);
                         intent.putExtra("id", courses.get(position).getId());
                         System.out.println(courses.get(position).getId());
                         intent.putExtra("cookie", cookie);
@@ -207,8 +204,6 @@ public class MyCourse extends Fragment {
                 });
             }
         };
-
-
     }
 
     private static String inputStreamTOString(InputStream in) throws Exception {
