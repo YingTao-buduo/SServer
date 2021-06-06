@@ -39,6 +39,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -65,8 +66,8 @@ public class AboutUser extends Fragment {
     private TextView userCollege;
     private TextView userSubject;
 
-    private String path = "http://es.bnuz.edu.cn/";
-    private String loginUrl = "http://es.bnuz.edu.cn?" +
+    private String path = "https://es.bnuz.edu.cn/";
+    private String loginUrl = "https://es.bnuz.edu.cn/default2.aspx?" +
             "__EVENTTARGET=&" +
             "__EVENTARGUMENT=&" +
             "__VIEWSTATE=" + "%%2FwEPDwUJLTQwNjEzNDEyDxYCHgh1c2VybmFtZWgWAmYPZBYCAhkPFgIeB1Zpc2libGVnZGRjPsIpUJ4aH2luxY44VsHHL9XfHA%%3D%%3D" + "&" +
@@ -205,8 +206,9 @@ public class AboutUser extends Fragment {
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
                         cookie = msg.obj.toString();
+                        System.out.println("get code cookie:"+cookie);
                         try{
-                            String checkCodePath = "http://es.bnuz.edu.cn/CheckCode.aspx";
+                            String checkCodePath = "https://es.bnuz.edu.cn/checkcode.aspx";
                             CookieManager.getInstance().setCookie(checkCodePath, cookie);
                             checkCode.loadUrl(checkCodePath);
                             checkCode.setInitialScale(500);
@@ -243,6 +245,8 @@ public class AboutUser extends Fragment {
                                     conn.setRequestProperty("Cookie", cookie);
                                     conn.setDoInput(true);
                                     conn.getInputStream();
+                                    System.out.println(p);
+//                                    System.out.println("!!!!!!!!!!!!!!!\n"+inputStreamTOString(conn.getInputStream()));
 
                                     ESConnection esConnection = new ESConnection();
                                     esConnection.setCookie(LN, LP, cookie);
@@ -261,6 +265,7 @@ public class AboutUser extends Fragment {
                                     parseScoreHtml(scoreHtml);
 
                                     String classroomHtml = esConnection.getExamInfo();
+                                    System.out.println(classroomHtml);
                                     parseClassroomHtml(classroomHtml);
 
                                     String userHtml = esConnection.getUserInfo();
@@ -329,7 +334,7 @@ public class AboutUser extends Fragment {
         es.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://es.bnuz.edu.cn/";
+                String url = "https://es.bnuz.edu.cn/";
                 Intent intent = new Intent();
                 intent.setAction("android.intent.action.VIEW");
                 intent.setData(Uri.parse(url));
@@ -402,6 +407,7 @@ public class AboutUser extends Fragment {
         try{
             Document doc = Jsoup.parseBodyFragment(html);
             Elements elements = doc.select("tbody");
+            System.out.println(elements);
             Elements trs = elements.select("tr");
             for(Element tr : trs) {
                 Elements tds = tr.select("td");
@@ -462,5 +468,15 @@ public class AboutUser extends Fragment {
             renderScript.destroy();
         }
         return inputBmp;
+    }
+
+    private static String inputStreamTOString(InputStream in) throws Exception {
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        byte[] data = new byte[1024];
+        int count = -1;
+        while ((count = in.read(data, 0, 1024)) != -1)
+            outStream.write(data, 0, count);
+        data = null;
+        return new String(outStream.toByteArray(), "UTF-8");
     }
 }

@@ -36,7 +36,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class MyCourse extends Fragment {
     private Handler handler;
-
+    boolean flag = true;
     private ListView courseList;
 
     private ArrayList<Course> courses = new ArrayList<>();
@@ -58,15 +58,28 @@ public class MyCourse extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.fragment_my_course, container, false);
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        if(flag){
+            courseList = getActivity().findViewById(R.id.lv_courseList);
+            load();
+            flag = false;
+        }
 
-        courseList = getActivity().findViewById(R.id.lv_courseList);
+    }
 
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        load();
+//    }
+
+    private void load(){
         new Thread() {
             @Override
             public void run() {
@@ -204,6 +217,27 @@ public class MyCourse extends Fragment {
                 });
             }
         };
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try{
+                    URL logoutUrl = new URL("http://eol.bnuz.edu.cn/meol/homepage/V8/include/logout.jsp");// 退出网络教学平台
+                    URLConnection connection1 = logoutUrl.openConnection();
+                    connection1.setRequestProperty("Cookie", cookie);
+                    connection1.setDoInput(true);
+                    String logoutHtml = inputStreamTOString(connection1.getInputStream());
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }.start();
     }
 
     private static String inputStreamTOString(InputStream in) throws Exception {

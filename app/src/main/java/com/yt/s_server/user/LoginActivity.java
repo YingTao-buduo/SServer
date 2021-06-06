@@ -43,14 +43,13 @@ public class LoginActivity extends AppCompatActivity {
     private WebView code;
 
     Handler handler;
-    String path = "http://es.bnuz.edu.cn/";
-    String loginUrl = "http://es.bnuz.edu.cn?" +
+    String path = "https://es.bnuz.edu.cn/";
+    String loginUrl = "https://es.bnuz.edu.cn/default2.aspx?" +
             "__EVENTTARGET=&" +
             "__EVENTARGUMENT=&" +
-            "__VIEWSTATE=" + "%%2FwEPDwUJLTQwNjEzNDEyDxYCHgh1c2VybmFtZWgWAmYPZBYCAhkPFgIeB1Zpc2libGVnZGRjPsIpUJ4aH2luxY44VsHHL9XfHA%%3D%%3D" + "&" +
-            "__VIEWSTATEGENERATOR=" + "09394A33&" +
-            "__PREVIOUSPAGE=" + "P41Qx-bOUYMcrSUDsalSZQ66PXL-H_8xeQ4t7bJ3gWnYCDI-j8Z8SOoK8eM1" + "&" +
-            "__EVENTVALIDATION=" + "%%2FwEWCwLh2%%2FLmDALs0bLrBgLs0fbZDALs0Yq1BQK%%2FwuqQDgKAqenNDQLN7c0VAveMotMNAu6ImbYPArursYYIApXa%%2FeQDLr1E%%2BXsVwFzL04pQEqVeam37aB4%%3D" + "&" +
+            "__VIEWSTATE=%2FwEPDwUJLTQwNjEzNDEyDxYCHgh1c2VybmFtZWhkZD5HOYLp%2BFwNuDEclUhijthCeycr&" +
+            "__VIEWSTATEGENERATOR=09394A33&__PREVIOUSPAGE=P41Qx-bOUYMcrSUDsalSZQ66PXL-H_8xeQ4t7bJ3gWnYCDI-j8Z8SOoK8eM1&" +
+            "__EVENTVALIDATION=%2FwEWCwKW88jlCgLs0bLrBgLs0fbZDALs0Yq1BQK%2FwuqQDgKAqenNDQLN7c0VAveMotMNAu6ImbYPArursYYIApXa%2FeQDu6j%2BXS%2BSPlr2TQa6hRCuQV6eBis%3D&"+
             "TextBox1=%s&" +
             "TextBox2=%s&" +
             "TextBox3=%s&" +
@@ -110,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 super.handleMessage(msg);
                 cookie = msg.obj.toString();
                 try{
-                    String checkCodePath = "http://es.bnuz.edu.cn/CheckCode.aspx";
+                    String checkCodePath = "https://es.bnuz.edu.cn/CheckCode.aspx";
                     CookieManager.getInstance().setCookie(checkCodePath, cookie);
                     code.loadUrl(checkCodePath);
                     code.setInitialScale(500);
@@ -151,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                             conn.setRequestProperty("Cookie", cookie);
                             conn.setDoInput(true);
                             conn.getInputStream();
-
+                            //821612999977
                             ESConnection esConnection = new ESConnection();
                             esConnection.setCookie(LN, LP, cookie);
 

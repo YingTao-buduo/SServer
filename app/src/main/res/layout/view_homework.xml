@@ -21,28 +21,20 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/colorItem"/>
-    <LinearLayout
+    <TextView
+        android:id="@+id/tv_ddl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="2021年3月27日 23:59:00"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tv_hw_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-        <TextView
-            android:id="@+id/tv_ddl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2021年3月27日 23:59:00"
-            android:textSize="17sp"/>
-
-        <TextView
-            android:id="@+id/tv_hw_score"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:textSize="17sp"
-            android:text="分数：80"/>
-
-    </LinearLayout>
+        android:gravity="end"
+        android:textSize="17sp"
+        android:layout_marginRight="20dp"
+        android:text="分数：80"/>
 
 </LinearLayout>

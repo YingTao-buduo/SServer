@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class HomeworkActivity extends AppCompatActivity {
     Handler handler;
@@ -35,8 +36,6 @@ public class HomeworkActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final String id = intent.getStringExtra("id");
         final String cookie = intent.getStringExtra("cookie");
-
-
 
         new Thread() {
             @Override
@@ -54,12 +53,12 @@ public class HomeworkActivity extends AppCompatActivity {
                     connHomework.setRequestProperty("Cookie", cookie);
                     connHomework.setDoInput(true);
                     result = inputStreamTOString(connHomework.getInputStream());
-
-                    URL logoutUrl = new URL("http://eol.bnuz.edu.cn/meol/homepage/V8/include/logout.jsp");// 退出网络教学平台
-                    URLConnection connection1 = logoutUrl.openConnection();
-                    connection1.setRequestProperty("Cookie", cookie);
-                    connection1.setDoInput(true);
-                    String logoutHtml = inputStreamTOString(connection1.getInputStream());
+                    //System.out.println(result);
+//                    URL logoutUrl = new URL("http://eol.bnuz.edu.cn/meol/homepage/V8/include/logout.jsp");// 退出网络教学平台
+//                    URLConnection connection1 = logoutUrl.openConnection();
+//                    connection1.setRequestProperty("Cookie", cookie);
+//                    connection1.setDoInput(true);
+//                    String logoutHtml = inputStreamTOString(connection1.getInputStream());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -89,7 +88,7 @@ public class HomeworkActivity extends AppCompatActivity {
                     }
                     try{
                         homeworkItems.add(new Homework(text.get(0), text.get(1), text.get(2), text.get(3)));
-                        System.out.println(text);
+                        //System.out.println(text);
                     } catch (Exception e){
                         e.printStackTrace();
                     }
@@ -101,6 +100,8 @@ public class HomeworkActivity extends AppCompatActivity {
             }
         };
     }
+
+
 
     private static String inputStreamTOString(InputStream in) throws Exception {
         ByteArrayOutputStream outStream = new ByteArrayOutputStream();
